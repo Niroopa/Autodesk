@@ -1,8 +1,8 @@
-package com.wbl.base;
+package com.ts.base;
 
-import com.wbl.utils.ExcelUtils;
-import com.wbl.utils.web.PageDriver;
-import com.wbl.utils.web.WBy;
+import com.ts.utils.ExcelUtils;
+import com.ts.utils.web.PageDriver;
+import com.ts.utils.web.WBy;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 

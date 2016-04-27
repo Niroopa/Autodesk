@@ -1,6 +1,6 @@
-package com.wbl.utils;
+package com.ts.utils;
 
-import com.wbl.utils.web.Browsers;
+import com.ts.utils.web.Browsers;
 import org.apache.log4j.Logger;
 
 import java.io.FileReader;

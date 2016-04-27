@@ -1,4 +1,4 @@
-package com.wbl.utils.web;
+package com.ts.utils.web;
 
 import org.openqa.selenium.WebDriver;
 

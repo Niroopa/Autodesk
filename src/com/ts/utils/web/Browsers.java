@@ -1,4 +1,4 @@
-package com.wbl.utils.web;
+package com.ts.utils.web;
 
 /**
  * Created by svelupula on 8/8/2015.

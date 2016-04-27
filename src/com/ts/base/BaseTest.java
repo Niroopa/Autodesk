@@ -1,6 +1,6 @@
-package com.wbl.base;
+package com.ts.base;
 
-import com.wbl.utils.Configuration;
+import com.ts.utils.Configuration;
 import org.apache.log4j.Logger;
 
 /**

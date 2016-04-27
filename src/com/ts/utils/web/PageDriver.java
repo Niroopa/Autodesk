@@ -1,6 +1,6 @@
-package com.wbl.utils.web;
+package com.ts.utils.web;
 
-import com.wbl.utils.Configuration;
+import com.ts.utils.Configuration;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.remote.MobilePlatform;
