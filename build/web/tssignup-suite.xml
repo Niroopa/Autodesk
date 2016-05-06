@@ -1,0 +1,7 @@
+<suite name="tssignup-suite" verbose="1">
+    <test name="FunctionalTest">
+        <classes>
+            <class name="com.ts.tests.SignUpNowTest"/>
+        </classes>
+    </test>
+</suite>
