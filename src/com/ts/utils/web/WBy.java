@@ -12,6 +12,7 @@ import java.util.HashMap;
 
 /**
  * Created by svelupula on 8/8/2015.
+ * Updated method:By get(String locator) by Vidhya Kasiviswanathan on 05/06/2016
  */
 public class WBy {
 
@@ -53,30 +54,30 @@ public class WBy {
             if (locator.contains("=")) {
                 String[] values = locator.split("=");
                 if (values[0].toLowerCase().equals("css")) {
-                    return By.cssSelector(getValue(values[1]));
+                    return By.cssSelector(getValue(locator));
                 }
                 if (values[0].toLowerCase().equals("xpath")) {
-                    return By.xpath(getValue(values[1]));
+                    return By.xpath(getValue(locator));
                 }
                 if (values[0].toLowerCase().equals("id")) {
-                    return By.id(getValue(values[1]));
+                    return By.id(getValue(locator));
                 }
                 if (values[0].toLowerCase().equals("name")) {
-                    return By.name(getValue(values[1]));
+                    return By.name(getValue(locator));
                 }
                 if (values[0].toLowerCase().equals("class")) {
-                    return By.className(getValue(values[1]));
+                    return By.className(getValue(locator));
                 }
                 if (values[0].toLowerCase().equals("link")) {
-                    return By.linkText(getValue(values[1]));
+                    return By.linkText(getValue(locator));
                 }
                 if (values[0].toLowerCase().equals("plink")) {
-                    return By.partialLinkText(getValue(values[1]));
+                    return By.partialLinkText(getValue(locator));
                 }
                 if (values[0].toLowerCase().equals("tag")) {
-                    return By.tagName(getValue(values[1]));
+                    return By.tagName(getValue(locator));
                 }
-                return By.cssSelector(getValue(values[1]));
+                return By.cssSelector(getValue(locator));
             }
 
             return By.cssSelector(getValue(locator));
