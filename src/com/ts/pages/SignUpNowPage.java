@@ -6,7 +6,9 @@ import org.openqa.selenium.By;
 
 /**
  * Created by Vidhya Kasiviswanathan on 5/5/2016.
+ * Updated with visibilityWait() by Vidhya Kasiviswanathan oon 5/9/2016.
  */
+
 public class SignUpNowPage extends BasePage {
 
     public SignUpNowPage(PageDriver driver) {
@@ -17,7 +19,7 @@ public class SignUpNowPage extends BasePage {
     //Click SignIn Button on top right corner
     public String clickSignIn() {
         driver.findElement("login.loginBtn").click();
-        driver.visibilityWait(By.cssSelector(".navbar-btn.btn.btn-success"));
+        driver.visibilityWait("login.signupBtn");
         String currentURL = driver.getCurrentUrl();
         driver.navigateback();
         return currentURL;
@@ -26,7 +28,7 @@ public class SignUpNowPage extends BasePage {
     //Click SIGNUP WITH GITHUB button
     public String clickSignUpwithGitHub() {
         driver.findElement("signup.withgithub").click();
-        driver.visibilityWait(By.cssSelector(".navbar-btn.btn.btn-success"));
+        driver.visibilityWait("login.signupBtn");
         String currentURL = driver.getCurrentUrl();
         driver.navigateback();
         return currentURL;
@@ -35,7 +37,7 @@ public class SignUpNowPage extends BasePage {
     //Click SIGNUP WITH FACEBOOK button
     public String clickSignUpwithFacebook() {
         driver.findElement("signup.withfacebook").click();
-        driver.visibilityWait(By.cssSelector(".navbar-btn.btn.btn-success"));
+        driver.visibilityWait("login.signupBtn");
         String currentURL = driver.getCurrentUrl();
         driver.navigateback();
         return currentURL;
@@ -44,7 +46,7 @@ public class SignUpNowPage extends BasePage {
     //Click SIGNUP WITH GOOGLE button
     public String clickSignUpwithGoogle() {
         driver.findElement("signup.withgoogle").click();
-        driver.visibilityWait(By.cssSelector(".navbar-btn.btn.btn-success"));
+        driver.visibilityWait("login.signupBtn");
         String currentURL = driver.getCurrentUrl();
         driver.navigateback();
         return currentURL;
@@ -53,7 +55,7 @@ public class SignUpNowPage extends BasePage {
     //Click SIGNUP WITH LINKEDIN button
     public String clickSignUpwithLinkedIn() {
         driver.findElement("signup.withlinkedin").click();
-        driver.visibilityWait(By.cssSelector(".navbar-btn.btn.btn-success"));
+        driver.visibilityWait("login.signupBtn");
         String currentURL = driver.getCurrentUrl();
         driver.navigateback();
         return currentURL;
@@ -68,7 +70,8 @@ public class SignUpNowPage extends BasePage {
     public String invalidEmailAddressFormat(String email) {
         driver.findElement("id=signup.email").clear();
         driver.findElement("id=signup.email").sendKeys(email);
-        //driver.visibilityWait(By.cssSelector("div >div .help-inline"));
+        driver.visibilityWait("signup.invalidemail");
+        driver.visibilityWait("signup.invalidemail");
         return driver.findElement("signup.invalidemail").getText();
     }
 
@@ -77,7 +80,7 @@ public class SignUpNowPage extends BasePage {
         driver.findElement("id=signup.email").clear();
         driver.findElement("id=signup.email").sendKeys("x");
         driver.findElement("id=signup.email").pressBackspace();
-        //driver.visibilityWait(By.cssSelector("div >div .help-inline"));
+        driver.visibilityWait("signup.invalidemail");
         return driver.findElement("signup.invalidemail").getText();
     }
 
@@ -86,6 +89,7 @@ public class SignUpNowPage extends BasePage {
     public String invalidPasswordChars(String password) {
         driver.findElement("id=signup.epassword").clear();
         driver.findElement("id=signup.epassword").sendKeys(password);
+        driver.visibilityWait("signup.invalidpwdchars");
         return driver.findElement("signup.invalidpwdchars").getText();
     }
 
