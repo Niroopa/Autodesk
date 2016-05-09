@@ -12,7 +12,9 @@ import java.util.Collection;
 
 /**
  * Created by svelupula on 8/8/2015.
+ * Added pressBackspace() by Vidhya Kasiviswanathan on 05/07/2016
  */
+
 public class HtmlElement implements ElementsContainer {
 
     private final PageDriver _browser;
@@ -88,6 +90,10 @@ public class HtmlElement implements ElementsContainer {
 
     public void pressEnter() {
         _element.sendKeys(Keys.RETURN);
+    }
+
+    public void pressBackspace() {
+        _element.sendKeys(Keys.BACK_SPACE);
     }
 
     public void click() {
