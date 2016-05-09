@@ -27,27 +27,27 @@ public class SignUpNowTest extends BaseWebTest {
     }
     //DELETE mynote: driver.quit() is in AfterSuite
 
-    @Test (enabled=true, priority = 1)
+    @Test (enabled=false, priority = 1)
     public void testClickSignIn() {
         assertEquals(_sp.clickSignIn(),"https://talentscreen.io/#/login");
     }
 
-    @Test (enabled=true, priority = 1)
+    @Test (enabled=false, priority = 1)
     public void testClickSignUpwithGitHub() {
         assertEquals(_sp.clickSignUpwithGitHub(),"https://talentscreen.io/#/login");
     }
 
-    @Test (enabled=true, priority = 1)
+    @Test (enabled=false, priority = 1)
     public void testClickSignUpwithFacebook() {
         assertEquals(_sp.clickSignUpwithFacebook(),"https://talentscreen.io/#/login");
     }
 
-    @Test (enabled=true, priority = 1)
+    @Test (enabled=false, priority = 1)
     public void testClickSignUpwithGoogle() {
         assertEquals(_sp.clickSignUpwithGoogle(),"https://talentscreen.io/#/login");
     }
 
-    @Test (enabled=true, priority = 1)
+    @Test (enabled=false, priority = 1)
     public void testClickSignUpwithLinkedIn() {
         assertEquals(_sp.clickSignUpwithLinkedIn(),"https://talentscreen.io/#/login");
     }
@@ -106,16 +106,16 @@ public class SignUpNowTest extends BaseWebTest {
     }
 
     @Test(enabled=true, priority = 1, dependsOnMethods = "testCreateAccount", dataProvider = "signup-email")
-    public void testInvalidEmailAddressFormat(String email, String error) throws Exception {
+    public void testInvalidEmailAddressFormat(String email, String error) {
         assertEquals(_sp.invalidEmailAddressFormat(email), error);
     }
 
     @Test(enabled=true, priority = 1, dependsOnMethods = "testCreateAccount")
-    public void testBackspaceEmailAddress() throws Exception {
+    public void testBackspaceEmailAddress() {
         assertEquals(_sp.backspaceEmailAddress(),"Email Required");
     }
 
-    @Test(enabled=false, priority = 1, dependsOnMethods = "testCreateAccount", dataProvider = "signup-invalidpasswordchars")
+    @Test(enabled=true, priority = 1, dependsOnMethods = "testCreateAccount", dataProvider = "signup-invalidpasswordchars")
     public void testInvalidPasswordChars(String password, String error){
         assertEquals(_sp.invalidPasswordChars(password), error);
     }
