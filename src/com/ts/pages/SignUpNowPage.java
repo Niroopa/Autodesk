@@ -65,10 +65,10 @@ public class SignUpNowPage extends BasePage {
     }
 
     //Check Invalid Email Address error message
-    public String invalidEmailAddressFormat(String email) throws Exception {
+    public String invalidEmailAddressFormat(String email) {
         driver.findElement("id=signup.email").clear();
         driver.findElement("id=signup.email").sendKeys(email);
-        driver.visibilityWait(By.cssSelector("signup.invalidemail"));
+        //driver.visibilityWait(By.cssSelector("div >div .help-inline"));
         return driver.findElement("signup.invalidemail").getText();
     }
 
@@ -77,7 +77,7 @@ public class SignUpNowPage extends BasePage {
         driver.findElement("id=signup.email").clear();
         driver.findElement("id=signup.email").sendKeys("x");
         driver.findElement("id=signup.email").pressBackspace();
-        driver.visibilityWait(By.cssSelector("signup.invalidemail"));
+        //driver.visibilityWait(By.cssSelector("div >div .help-inline"));
         return driver.findElement("signup.invalidemail").getText();
     }
 
