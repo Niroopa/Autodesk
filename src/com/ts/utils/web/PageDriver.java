@@ -28,7 +28,10 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Created by svelupula on 8/8/2015.
+ * Added navigateback() by Vidhya Kasiviswanathan on 5/8/2016.
+ * Updated visibilityWait to use Wby.get(locator) by Vidhya Kasiviswanathan on 5/9/2016.
  */
+
 public class PageDriver implements ElementsContainer {
 
     public final Configuration _configuration;
@@ -124,6 +127,10 @@ public class PageDriver implements ElementsContainer {
         }
     }
 
+    public void navigateback() {
+        _webDriver.navigate().back();
+    }
+
     public String getTitle() {
         return _webDriver.getTitle();
     }
@@ -216,15 +223,15 @@ public class PageDriver implements ElementsContainer {
       //s  }
     }
 
-    public void visibilityWait(By locator)
+    public void visibilityWait(String locator)
     {
         //if (_browser != Browsers.HtmlUnit) {
         try {
             long timeout = Long.valueOf(_configuration.WaitTimeout).longValue();
             WebDriverWait wait = new WebDriverWait(_webDriver, timeout);
-            wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(WBy.get(locator)));
             Thread.sleep(2000);
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         // }
@@ -244,12 +251,12 @@ public class PageDriver implements ElementsContainer {
        }
     }
 
-    public void presenceWait(By locator)
+    public void presenceWait(String locator)
     {
         try {
         long timeout = Long.valueOf(_configuration.WaitTimeout).longValue();
         WebDriverWait wait = new WebDriverWait(_webDriver, timeout);
-        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector(locator)));
         Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
