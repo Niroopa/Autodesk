@@ -25,8 +25,6 @@
   "signup.terms":".checkbox.checkbox-success #terms",
   "link=signup.terms":"Terms & Conditions!",
   "signup.createaccount":"#main-nav .navbar-btn.btn.btn-primary",
-  "signup.invalidemail":"div >div .help-inline",
-  "signup.pwdrequired":"div >div .help-inline span:nth-child(1)",
-  "signup.invalidpwd":"div >div .help-inline span:nth-child(2)",
-  "signup.invalidpwdchars":"div >div .help-inline span:nth-child(3)"
+  "signup.invaliddetails":"span[class='']",
+  "signup.createaccountbtn":"input[type=submit]"
 }
