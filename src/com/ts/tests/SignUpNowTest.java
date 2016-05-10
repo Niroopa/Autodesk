@@ -1,7 +1,6 @@
 package com.ts.tests;
 
 import com.ts.base.BaseWebTest;
-import com.ts.pages.HomePage;
 import com.ts.pages.SignUpNowPage;
 import com.ts.utils.ExcelUtils;
 import org.testng.annotations.BeforeClass;
@@ -12,7 +11,9 @@ import static org.testng.Assert.assertEquals;
 
 /**
  * Created by Vidhya Kasiviswanathan on 5/5/2016.
+ * Added tests for Confirmation Password by Vidhya Kasiviswanathan on 5/10/2016
  */
+
 public class SignUpNowTest extends BaseWebTest {
 
     private SignUpNowPage _sp;
@@ -27,27 +28,27 @@ public class SignUpNowTest extends BaseWebTest {
     }
     //DELETE mynote: driver.quit() is in AfterSuite
 
-    @Test (enabled=false, priority = 1)
+    @Test (enabled=true, priority = 1)
     public void testClickSignIn() {
         assertEquals(_sp.clickSignIn(),"https://talentscreen.io/#/login");
     }
 
-    @Test (enabled=false, priority = 1)
+    @Test (enabled=true, priority = 1)
     public void testClickSignUpwithGitHub() {
         assertEquals(_sp.clickSignUpwithGitHub(),"https://talentscreen.io/#/login");
     }
 
-    @Test (enabled=false, priority = 1)
+    @Test (enabled=true, priority = 1)
     public void testClickSignUpwithFacebook() {
         assertEquals(_sp.clickSignUpwithFacebook(),"https://talentscreen.io/#/login");
     }
 
-    @Test (enabled=false, priority = 1)
+    @Test (enabled=true, priority = 1)
     public void testClickSignUpwithGoogle() {
         assertEquals(_sp.clickSignUpwithGoogle(),"https://talentscreen.io/#/login");
     }
 
-    @Test (enabled=false, priority = 1)
+    @Test (enabled=true, priority = 1)
     public void testClickSignUpwithLinkedIn() {
         assertEquals(_sp.clickSignUpwithLinkedIn(),"https://talentscreen.io/#/login");
     }
@@ -105,6 +106,31 @@ public class SignUpNowTest extends BaseWebTest {
         return data;
     }
 
+    @DataProvider(name="signup-confirmpasswordsdontmatch")
+    public Object[][] getPassword4() {
+        ExcelUtils excelUtils = new ExcelUtils();
+        Object[][] data = new Object[0][];
+        try {
+            data = excelUtils.getSimpleExcelData("web-data.xlsx", "invalidPassword4");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return data;
+    }
+
+    @DataProvider(name="signup-confirmpasswordrequired")
+    public Object[][] getPassword5() {
+        ExcelUtils excelUtils = new ExcelUtils();
+        Object[][] data = new Object[0][];
+        try {
+            data = excelUtils.getSimpleExcelData("web-data.xlsx", "invalidPassword5");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return data;
+    }
+
+
     @Test(enabled=true, priority = 1, dependsOnMethods = "testCreateAccount", dataProvider = "signup-email")
     public void testInvalidEmailAddressFormat(String email, String error) {
         assertEquals(_sp.invalidEmailAddressFormat(email), error);
@@ -120,10 +146,29 @@ public class SignUpNowTest extends BaseWebTest {
         assertEquals(_sp.invalidPasswordChars(password), error);
     }
 
-    @Test(enabled=false, priority = 1, dependsOnMethods = "testCreateAccount", dataProvider = "signup-backspacepassword")
+    @Test(enabled=true, priority = 1, dependsOnMethods = "testCreateAccount", dataProvider = "signup-invalidpassword")
+    public void testInvalidPassword(String password, String error){
+        assertEquals(_sp.invalidPassword(password), error);
+    }
+
+    @Test(enabled=true, priority = 1, dependsOnMethods = "testCreateAccount", dataProvider = "signup-backspacepassword")
     public void testBackspacePassword(String password, String error){
         assertEquals(_sp.backspacePassword(password), error);
     }
 
+    @Test(enabled=true, priority = 1, dependsOnMethods = "testCreateAccount", dataProvider = "signup-confirmpasswordsdontmatch")
+    public void testConfirmPasswordsDontMatch(String password, String error){
+        assertEquals(_sp.confirmPasswordsDontMatch(password), error);
+    }
+
+    @Test(enabled=true, priority = 1, dependsOnMethods = "testCreateAccount", dataProvider = "signup-confirmpasswordrequired")
+    public void testConfirmPasswordRequired(String password, String error){
+        assertEquals(_sp.backspaceConfirmPassword(password), error);
+    }
+
+    @Test(enabled=true, priority = 1, dependsOnMethods = "testCreateAccount")
+    public void testConfirmPasswordRequired(){
+        assertEquals(_sp.createAccountSuccess(),"https://talentscreen.io/#");
+    }
 }
 
