@@ -69,7 +69,9 @@ public class WBy {
                     return By.className(getValue(locator));
                 }
                 if (values[0].toLowerCase().equals("link")) {
+                	System.out.println("Indise by class:"+By.linkText(getValue(locator)));
                     return By.linkText(getValue(locator));
+                    
                 }
                 if (values[0].toLowerCase().equals("plink")) {
                     return By.partialLinkText(getValue(locator));

@@ -5,11 +5,7 @@ import com.ts.utils.web.PageDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
-/**
- * Created by Vidhya Kasiviswanathan on 5/5/2016.
- * Updated based on locators.json signup.invaliddetails by Vidhya Kasiviswanathan on 5/10/2016
- * Added tests for Confirmation password by Vidhya Kasiviswanathan on 5/10/2016
- */
+
 
 public class SignUpNowPage extends BasePage {
 
@@ -18,7 +14,7 @@ public class SignUpNowPage extends BasePage {
 
     }
 
-    //Click SignIn Button on top right corner
+ /*   //Click SignIn Button on top right corner
     public String clickSignIn() {
         driver.findElement("login.loginBtn").click();
         driver.visibilityWait("login.signupBtn");
@@ -155,7 +151,7 @@ public class SignUpNowPage extends BasePage {
         driver.findElement("signup.createaccountbtn").click();
         return driver.getCurrentUrl();
     }
-
+*/
 
 
 }

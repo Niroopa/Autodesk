@@ -29,6 +29,7 @@ public class HtmlElement implements ElementsContainer {
 
     public HtmlElement findElement(String locator) {
         try {
+        	System.out.println("entering in html element"+this._browser + _element.findElement(WBy.get(locator)));
             return new HtmlElement(this._browser, _element.findElement(WBy.get(locator)));
         } catch (Exception ex) {
             _logger.error(ex);

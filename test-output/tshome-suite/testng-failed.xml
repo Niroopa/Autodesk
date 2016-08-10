@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [tshome-suite]">
+  <test name="FunctionalTest(failed)">
+    <classes>
+      <class name="com.ts.tests.HomePageTest">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="testClickLogin"/>
+          <include name="testClickSubjects"/>
+          <include name="testClickCandidate"/>
+          <include name="testFeaturedSubjects"/>
+          <include name="testSubjectsSlider"/>
+          <include name="testLogo"/>
+          <include name="testClickSignupNow"/>
+          <include name="afterSuite"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- com.ts.tests.HomePageTest -->
+    </classes>
+  </test> <!-- FunctionalTest(failed) -->
+</suite> <!-- Failed suite [tshome-suite] -->

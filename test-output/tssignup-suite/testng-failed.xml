@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [tssignup-suite]">
+  <test name="FunctionalTest(failed)">
+    <classes>
+      <class name="com.ts.tests.SignUpNowTest">
+        <methods>
+          <include name="testCreateAccount"/>
+          <include name="testInvalidEmailAddressFormat"/>
+          <include name="beforeClass"/>
+          <include name="testClickSignUpwithFacebook"/>
+          <include name="testClickSignUpwithGitHub"/>
+          <include name="testInvalidPassword"/>
+          <include name="testClickSignUpwithGoogle"/>
+          <include name="testBackspacePassword"/>
+          <include name="testInvalidPasswordChars"/>
+          <include name="beforeSuite"/>
+          <include name="testConfirmPasswordsDontMatch"/>
+          <include name="testClickSignIn"/>
+          <include name="testBackspaceEmailAddress"/>
+          <include name="testClickSignUpwithLinkedIn"/>
+          <include name="testConfirmPasswordRequired"/>
+          <include name="testConfirmPasswordRequired"/>
+        </methods>
+      </class> <!-- com.ts.tests.SignUpNowTest -->
+    </classes>
+  </test> <!-- FunctionalTest(failed) -->
+</suite> <!-- Failed suite [tssignup-suite] -->

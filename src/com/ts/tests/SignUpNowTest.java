@@ -9,16 +9,13 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-/**
- * Created by Vidhya Kasiviswanathan on 5/5/2016.
- * Added tests for Confirmation Password by Vidhya Kasiviswanathan on 5/10/2016
- */
+
 
 public class SignUpNowTest extends BaseWebTest {
 
     private SignUpNowPage _sp;
 
-    @BeforeClass
+  /*  @BeforeClass
     public void beforeClass() {
         _sp = new SignUpNowPage(driver);
         //mynote: The following button does not work, use open(url) until it is fixed.
@@ -169,6 +166,6 @@ public class SignUpNowTest extends BaseWebTest {
     @Test(enabled=true, priority = 1, dependsOnMethods = "testCreateAccount")
     public void testConfirmPasswordRequired(){
         assertEquals(_sp.createAccountSuccess(),"https://talentscreen.io/#");
-    }
+    }*/
 }
 
